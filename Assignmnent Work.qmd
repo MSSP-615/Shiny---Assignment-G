@@ -1,0 +1,20 @@
+---
+title: "Assignment G"
+author: "Madeleine Livaudais"
+format: 
+  html:
+    embed-resources: true
+editor: visual
+---
+
+## Shiny
+
+```{r}
+#| label: read in libraries
+#| warning: false
+#| message: false
+#| echo: false
+
+
+```
+
