@@ -120,23 +120,23 @@ ui <- dashboardPage(
       
       # ----- British vs Non-British Tab -----
       tabItem(tabName = "british_nonbritish",
-        fluidRow(
-          box(width = 12, title = "British vs Non-British Writers", solidHeader = TRUE, status = "warning",
-            p("This analysis shows how many British/UK-affiliated writers versus non-British writers have been shortlisted or awarded UK book prizes."),
-            
-            selectInput("british_role_filter", "Filter by Prize Role:",
-              choices = c("All", unique(prizes$person_role)), selected = "All"),
-            
-            tableOutput("british_table"))
-        ),
-        
-        fluidRow(
-          box(width = 6, title = "Overall British vs Non-British Unique Authors", solidHeader = TRUE, status = "primary",
-            plotlyOutput("british_plot", height = "350px")),
-          
-          box(width = 6, title = "British vs Non-British Unique Authors by Prize Role", solidHeader = TRUE, status = "primary",
-            plotlyOutput("british_plot_role", height = "350px"))
-        )
+              fluidRow(
+                box(width = 12, title = "British vs Non-British Writers", solidHeader = TRUE, status = "warning",
+                    p("This analysis shows how many British/UK-affiliated writers versus non-British writers have been shortlisted or awarded UK book prizes."),
+                    
+                    selectInput("british_role_filter", "Filter by Prize Role:",
+                                choices = c("All", unique(prizes$person_role)), selected = "All"),
+                    
+                    tableOutput("british_table"))
+              ),
+              
+              fluidRow(
+                box(width = 6, title = "Overall British vs Non-British Unique Authors", solidHeader = TRUE, status = "primary",
+                    plotlyOutput("british_plot", height = "350px")),
+                
+                box(width = 6, title = "British vs Non-British Unique Authors by Prize Role", solidHeader = TRUE, status = "primary",
+                    plotlyOutput("british_plot_role", height = "350px"))
+              )
       ), 
       
       # ---------- Gender Representation -----------
@@ -145,68 +145,68 @@ ui <- dashboardPage(
         
         fluidRow(
           box(width = 12, title = "Trends in Gender Representation Over Time", solidHeader = TRUE, status = "warning",
-            p("How has gender representation changed among shortlisted authors and prize winners over time?"),
-            selectInput("gender_role", "Prize Role:",
-              choices = c("All", unique(prizes$person_role)), selected = "All"))
+              p("How has gender representation changed among shortlisted authors and prize winners over time?"),
+              selectInput("gender_role", "Prize Role:",
+                          choices = c("All", unique(prizes$person_role)), selected = "All"))
         ),
         
         fluidRow(
           box(width = 12, title = "Gender Representation Over Time", solidHeader = TRUE, status = "primary",
-            plotlyOutput("gender_rep_plot", height = "400px"))
+              plotlyOutput("gender_rep_plot", height = "400px"))
         ),
         
         fluidRow(
           box(width = 12, title = "Gender Summary Table", solidHeader = TRUE, status = "primary",
-            tableOutput("gender_rep_table"))
+              tableOutput("gender_rep_table"))
         )
       ),
       
       # ----- Ethnicity Representation -----
       tabItem(tabName = "ethnicity_representation",
-        
-        fluidRow(
-          box(width = 12, title = "Trends in Ethnic Representation Over Time", solidHeader = TRUE, status = "warning",
-            p("How has ethnic diversity changed among shortlisted authors and prize winners over time?"),
-            selectInput("eth_role", "Prize Role:",
-              choices = c("All", unique(prizes$person_role)), selected = "All"))
-        ),
-        
-        fluidRow(
-          box(width = 12, title = "Ethnicity Representation Over Time", solidHeader = TRUE, status = "primary",
-            plotlyOutput("eth_rep_plot", height = "400px"))
-        ),
-        
-        fluidRow(
-          box(width = 12, title = "Ethnicity Summary Table", solidHeader = TRUE, status = "primary",
-            tableOutput("eth_rep_table"))
-        )
+              
+              fluidRow(
+                box(width = 12, title = "Trends in Ethnic Representation Over Time", solidHeader = TRUE, status = "warning",
+                    p("How has ethnic diversity changed among shortlisted authors and prize winners over time?"),
+                    selectInput("eth_role", "Prize Role:",
+                                choices = c("All", unique(prizes$person_role)), selected = "All"))
+              ),
+              
+              fluidRow(
+                box(width = 12, title = "Ethnicity Representation Over Time", solidHeader = TRUE, status = "primary",
+                    plotlyOutput("eth_rep_plot", height = "400px"))
+              ),
+              
+              fluidRow(
+                box(width = 12, title = "Ethnicity Summary Table", solidHeader = TRUE, status = "primary",
+                    tableOutput("eth_rep_table"))
+              )
       ),
       
       
       # ----- Genre Representation -----
       tabItem( tabName = "genre_rep",
-        
-       fluidRow(
-          box(width = 12, title = "Representation by Genre", solidHeader = TRUE, status = "warning",
-            p("Which genres tend to shortlist or award women and ethnically diverse writers? 
+               
+               fluidRow(
+                 box(width = 12, title = "Representation by Genre", solidHeader = TRUE, status = "warning",
+                     p("Which genres tend to shortlist or award women and ethnically diverse writers? 
                   Use the controls to explore representation patterns by gender and ethnicity 
                   across literary prize genres."),
-            selectInput("genre_variable", "Representation Variable:",
-              choices = c("Gender" = "gender", "Ethnicity" = "ethnicity_macro")),
-            selectInput("genre_role", "Prize Role:",
-              choices = c("All", unique(prizes$person_role)), selected = "All")
-          )
-        ),
-        
-        fluidRow(
-          box(width = 12, title = "Genre Representation Plot", solidHeader = TRUE, status = "primary",
-            plotlyOutput("genre_plot", height = "450px"))
-        ),
-        
-        fluidRow(
-          box(width = 12, title = "Representation by Genre (Table)", solidHeader = TRUE, status = "primary",
-              tableOutput("genre_table"))
-        )
+                     selectInput("genre_variable", "Representation Variable:",
+                                 choices = c("Gender" = "gender", "Ethnicity" = "ethnicity_macro")),
+                     selectInput("genre_role", "Prize Role:",
+                                 choices = c("All", unique(prizes$person_role)), selected = "All")
+                 )
+               ),
+               
+               fluidRow(
+                 box(width = 12, title = "Genre Representation Plot", solidHeader = TRUE, status = "primary",
+                     plotlyOutput("genre_plot", height = "450px"))
+               ),
+               
+               fluidRow(
+                 box(width = 12, title = "Representation by Genre (Table)", solidHeader = TRUE, status = "primary",
+                     tableOutput("genre_table"))
+               )
       )
       
     )

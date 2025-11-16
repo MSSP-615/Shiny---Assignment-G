@@ -1,0 +1,13 @@
+name: 1st_Shiny_App_Assignment_G_615
+title: 1st_Shiny_App_Assignment_G_615
+username: mmlivaudais
+account: mmlivaudais
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16046936
+bundleId: 11187095
+url: https://mmlivaudais.shinyapps.io/1st_Shiny_App_Assignment_G_615/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Discussion 3 Nov.qmd|README.md
