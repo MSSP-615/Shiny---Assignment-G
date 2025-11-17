@@ -1,3 +1,11 @@
+library(shiny)
+library(shinydashboard)
+library(dplyr)
+library(DT)
+library(ggplot2)
+library(plotly)
+library(RColorBrewer)
+
 # --- Gender Pie Chart ---
 output$gender_plot <- renderPlotly({
   data <- prizes %>% filter(!is.na(gender)) %>% count(gender)

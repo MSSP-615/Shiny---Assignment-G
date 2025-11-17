@@ -1,5 +1,10 @@
 library(shiny)
 library(shinydashboard)
+library(dplyr)
+library(DT)
+library(ggplot2)
+library(plotly)
+library(RColorBrewer)
 
 # Load your dataset
 prizes <- read.csv("prizes_final.csv", stringsAsFactors = FALSE)

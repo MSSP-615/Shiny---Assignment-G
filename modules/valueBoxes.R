@@ -1,3 +1,11 @@
+library(shiny)
+library(shinydashboard)
+library(dplyr)
+library(DT)
+library(ggplot2)
+library(plotly)
+library(RColorBrewer)
+
 output$total_prizes_box <- renderValueBox({
   valueBox(
     value = nrow(prizes),

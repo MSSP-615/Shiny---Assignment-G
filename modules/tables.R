@@ -1,3 +1,11 @@
+library(shiny)
+library(shinydashboard)
+library(dplyr)
+library(DT)
+library(ggplot2)
+library(plotly)
+library(RColorBrewer)
+
 # British vs Non-British Table
 output$british_table <- renderTable({
   dat <- prizes
